@@ -1,0 +1,167 @@
+/* SCREEN 3 */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color:#13666f ;
+  font-family: 'Raleway', serif;
+}
+
+.content {
+  max-width: 85rem;
+  margin: 0 auto;
+}
+
+.title {
+  color:#c6e7da;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 90px;
+  font-weight: 600;
+  line-height: 1.2;
+  padding-bottom:5px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.movement {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.subtitle {
+  color:white;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 0.25rem;
+}
+.available {
+  border-radius: 0.25rem;
+  background-color: #7FC2CA; 
+  color: white;
+  font-size: 30px;
+  font-weight: 600;
+  padding: 4px 15px;
+  box-shadow: 0.25rem 0.25rem 0.25rem rgba(0, 0, 0, 0.2);
+}
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(10rem, 1fr));
+}
+.card {
+  background-color: #EF7F96;
+  cursor: pointer;
+  height: 6.5rem;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 500ms ease-in-out;
+
+}
+
+.card--picked {
+  transform: rotateY(180deg);
+}
+
+.card--guessed {
+  background-color: whitesmoke;
+  transform: rotateY(180deg) scale(0.9);
+}
+
+.card__front,
+.card__back {
+  backface-visibility: hidden;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  padding: 1px; 
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  transition: transform 330ms ease-in-out;
+  width: 100%;
+}
+
+.card__front {
+  transform: rotateY(-180deg);
+}
+
+.card__back {
+  background-color: var(--sidecar);
+}
+
+.front__img {
+  width: 14rem;
+}
+
+.back__img {
+  width: 15rem;
+}
+
+.modal {
+  backdrop-filter: blur(0.2rem);
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  opacity: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transform: translateY(100%);
+  transition: all 270ms ease-in;
+}
+
+.modal--open {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.modal-container {
+  background-color: white;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 13rem;
+  max-width: 20rem;
+  padding: 1rem;
+  width: 100%;
+}
+
+.modal-title {
+  color: black;
+  font-size: 33px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.button {
+  background-color:plum;
+  color: white;
+  cursor: pointer;
+  font-size: 1.7rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  transition: all 270ms ease-in;
+}
+
+.button:hover,
+.button:active {
+  background-color: white;
+  color:crimson;
+}
